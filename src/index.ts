@@ -13,7 +13,6 @@ export let csvData: CsvData[]
             .filter(csv => Number(csv.TOTAL) > 0)
             .map((csv) => { return { address: csv.address, name: csv['\bNAME'], totalBox: csv.TOTAL } })
        
-        console.log(CSV_DATA)
         csvData = CSV_DATA
         await connectMongoBox(MONGO_BOX_URI)
         await connectMongoFusion(MONGO_FUSION_URI)
