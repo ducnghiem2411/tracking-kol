@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  tracking-kol:
+    container_name: tracking-kol
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "$PORT:$PORT"
+    env_file: .env
+    restart: always
