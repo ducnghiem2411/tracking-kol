@@ -19,7 +19,7 @@ export async function get_fusions_info(root: any, args: any, ctx: any) {
         const totalFusionTimes = await Fusions.countDocuments({ owner: address, createdAt: { $gte: startTime, $lte: endTime }  })
 
         return {
-            rangeDate: `${new Date(startTime)} -- ${new Date(endTime)}`,
+            rangeDate: `${new Date(startTime).toISOString()} -- ${new Date(endTime).toISOString()}`,
             address,
             name: foundAddress.name,
             totalFusionTimes
